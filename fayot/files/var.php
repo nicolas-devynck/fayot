@@ -1,7 +1,7 @@
 <?php
 $bdHost = "localhost";
 $bdLogin = "root";
-$bdPws = "";
+$bdPsw = "";
 $bdName = "fayot";
 $bdTable = "fayot";
 ?>

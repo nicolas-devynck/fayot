@@ -4,7 +4,7 @@ include 'var.php';
 // date ajax
 $date_jour = $_GET["date_jour"];
 // connexion a la Basse de donner
-try {$pdo = new PDO("mysql:host=".$bdHost.";dbname=".$bdName, $bdLogin, $bdPws);}
+try {$pdo = new PDO("mysql:host=".$bdHost.";dbname=".$bdName, $bdLogin, $bdPsw);}
 catch (Exception $e) {die('Erreur : '.$e->getMessage());}
 // variable statistique
 $total_pages_visitees_depuis_creation = 0;

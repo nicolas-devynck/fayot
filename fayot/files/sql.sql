@@ -1,3 +1,4 @@
+CREATE DATABASE `fayot` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 CREATE TABLE `fayot` (
   `id` int(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `date_viste` varchar(255) CHARACTER SET utf8 NOT NULL,
