@@ -21,17 +21,17 @@ function core(date_jour) {
         }
       }
       //construction des section
-      $("body").append("<section id='general'></section>");
-      $("body").append("<section id='general'></section>");
-      $("body").append("<section id='visite_par_heure'></section>");
-      $("body").append("<section id='total_page'></section>");
-      $("body").append("<section id='total_visiteur'></section>");
-      $("body").append("<section id='total_referer'></section>");
-      $("body").append("<section id='total_navigateur'></section>");
-      $("body").append("<section id='total_os'></section>");
+      $("#core").append("<section id='general'></section>");
+      $("#core").append("<section id='general'></section>");
+      $("#core").append("<section id='visite_par_heure'></section>");
+      $("#core").append("<section id='total_page'></section>");
+      $("#core").append("<section id='total_visiteur'></section>");
+      $("#core").append("<section id='total_referer'></section>");
+      $("#core").append("<section id='total_navigateur'></section>");
+      $("#core").append("<section id='total_os'></section>");
       //general
-      $("#general").append("<div>Statistiques du : "+jour+"/"+mois+"/"+annee+"</div>");
-      $("#general").append("<div>Depuis la création du site, "+JSON.parse(retour).total_pages_visitees_depuis_creation+" pages ont été visitées par "+JSON.parse(retour).total_visiteur_depuis_debut+" visiteurs.</div>");
+      $("#general").append("<h1>Statistiques du : "+jour+"/"+mois+"/"+annee+"</h1>");
+      $("#general").append("<h3>Depuis la création du site, "+JSON.parse(retour).total_pages_visitees_depuis_creation+" pages ont été visitées par "+JSON.parse(retour).total_visiteur_depuis_debut+" visiteurs.</h3>");
       //viste par heure
       $("#visite_par_heure").append("<div>Nombre de pages vues par tranche horaires</div>");
       for (var i = 0; i < JSON.parse(retour).visite_par_heure.length; i++) {

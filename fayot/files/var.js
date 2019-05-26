@@ -3,7 +3,7 @@ var adresse = "http://localhost/fayot/";
 // css de basse
 var barCSS = {
   "font-weight":"bold",
-  "background":"linear-gradient(to right, #fff, #6b8e23)",
+  "background":"linear-gradient(to right, #fff, #9FDA58)",
   "border-bottom-right-radius":"5px",
   "border-top-right-radius":"5px",
   "border-right": "2px solid black",
