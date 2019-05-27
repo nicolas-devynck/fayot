@@ -22,7 +22,4 @@ $( document ).ready(function() {
       core(date);
     }
   });
-  $("#logo").click(function() {
-    core(date_jour);
-  });
 });

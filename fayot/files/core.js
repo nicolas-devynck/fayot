@@ -30,15 +30,17 @@ function core(date_jour) {
         weekHeader: "Sem."
       });
       // on vide la page
-      $("#cadre").html("");
+      $("#titre").remove();
+      $("#cadre").remove();
       //construction des section
+      $("#header").append("<div id='titre'></div>");
+      $("body").append("<div id='cadre'></div>");
       //general
-      $("#cadre").append("<div>Statistiques du "+datefr+"</div>");
-      $("#cadre").append("<div>Depuis la création du site, "+JSON.parse(retour).total_pages_visitees_depuis_creation+" pages ont été visitées par "+JSON.parse(retour).total_visiteur_depuis_debut+" visiteurs.</div>");
-      $("#cadre").append("<div id='core'></div>");
+      $("#titre").append("<div>Statistiques du "+datefr+"</div>");
+      $("#titre").append("<div>Depuis la création du site, "+JSON.parse(retour).total_pages_visitees_depuis_creation+" pages ont été visitées par "+JSON.parse(retour).total_visiteur_depuis_debut+" visiteurs.</div>");
       //viste par heure
-      $("#core").append("<div>Nombre de pages vues par tranche horaires</div>");
-      $("#core").append("<div id='visite_par_heure'></div>");
+      $("#cadre").append("<div>Nombre de pages vues par tranche horaires</div>");
+      $("#cadre").append("<div id='visite_par_heure'></div>");
       for (var i = 0; i < JSON.parse(retour).visite_par_heure.length; i++) {
         if (JSON.parse(retour).visite_par_heure[i] == 0) {continue} //suprestion des heure vide
         // affichage des heure au format 00H - 01H
@@ -53,10 +55,10 @@ function core(date_jour) {
           "float":"right"
         });
       }
-      $("#visite_par_heure").append("Soit un total de "+JSON.parse(retour).total_pages_vu+" pages vues par "+JSON.parse(retour).total_visiteur+" visiteurs.");
+      $("#visite_par_heure").append("<p>Soit un total de "+JSON.parse(retour).total_pages_vu+" pages vues par "+JSON.parse(retour).total_visiteur+" visiteurs.</p>");
       //pages les plus vues
-      $("#core").append("<div>Les pages les plus vues</div>");
-      $("#core").append("<div id='total_page'></div>");
+      $("#cadre").append("<div>Les pages les plus vues</div>");
+      $("#cadre").append("<div id='total_page'></div>");
       // conteur pour ecrire et appeler les id sur les div
       var count = 0;
       for (var page in JSON.parse(retour).total_page) {
@@ -73,8 +75,8 @@ function core(date_jour) {
         });
       }
       // Les visiteurs les plus connectés
-      $("#core").append("<div>Les visiteurs les plus connectés</div>");
-      $("#core").append("<div id='total_visiteur'></div>");
+      $("#cadre").append("<div>Les visiteurs les plus connectés</div>");
+      $("#cadre").append("<div id='total_visiteur'></div>");
       // conteur pour ecrire et appeler les id sur les div
       var count = 0;
       for (var host in JSON.parse(retour).total_host) {
@@ -91,8 +93,8 @@ function core(date_jour) {
         });
       }
       // Les meilleurs referer
-      $("#core").append("<div>Les meilleurs référant</div>");
-      $("#core").append("<div id='total_referer'></div>");
+      $("#cadre").append("<div>Les meilleurs référant</div>");
+      $("#cadre").append("<div id='total_referer'></div>");
       // conteur pour ecrire et appeler les id sur les div
       var count = 0;
       for (var referer in JSON.parse(retour).total_referer) {
@@ -108,8 +110,8 @@ function core(date_jour) {
           "float":"right"
         });
       }
-      $("#core").append("<div>Classement des navigateurs utiliser</div>");
-      $("#core").append("<div id='total_navigateur'></div>");
+      $("#cadre").append("<div>Classement des navigateurs utiliser</div>");
+      $("#cadre").append("<div id='total_navigateur'></div>");
       // conteur pour ecrire et appeler les id sur les div
       var count = 0;
       // on recherche le total des navigateurs pour calculer le %
@@ -127,8 +129,8 @@ function core(date_jour) {
           "float":"right"
         });
       }
-      $("#core").append("<div>Classement des OS utiliser</div>");
-      $("#core").append("<div id='total_os'></div>");
+      $("#cadre").append("<div>Classement des OS utiliser</div>");
+      $("#cadre").append("<div id='total_os'></div>");
       // conteur pour ecrire et appeler les id sur les div
       var count = 0;
       for (var key in os) {
@@ -145,11 +147,11 @@ function core(date_jour) {
           "float":"right"
         });
       }
-      $("#core").accordion();
+      $("#cadre").accordion();
     },
     error : function(retour) {
       // message d'erreur et affichage du retoure ajax dans la console
-      $("body").append("une erreur est survenue, veuillez contacter l'administrateur");
+      $("body").append("<p>une erreur est survenue, veuillez contacter l'administrateur</p>");
       console.log(retour);
     }
   });
