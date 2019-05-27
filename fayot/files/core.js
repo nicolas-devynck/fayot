@@ -146,7 +146,6 @@ function core(date_jour) {
         });
       }
       $("#core").accordion();
-      console.log("toto");
     },
     error : function(retour) {
       // message d'erreur et affichage du retoure ajax dans la console

@@ -27,18 +27,22 @@
 	</head>
 	<body>
 		<div id="menu">
-			<div id="txtLogo">Fayot</div>
 			<div id="logo">
-				<div>
-					<img src="files/logo.png" alt="logo" height="150" width="150">
-				</div>
+				<span><img src="files/logo.png" alt="logo" height="150" width="150"></span>
+				<div>Fayot</div>
 			</div>
+
 			<div id="txt">Voir les statistiques d'un autre jour</div>
 			<div id="datepicker"></div>
 			<div><a href="#">Voir les statistiques sur l'année</a></div>
 			<div><a href="#">Voir les statistiques sur le mois</a></div>
 			</ul>
 		</div>
+
+
+
+
+
 		<div id="cadre">
 
 		</div>
