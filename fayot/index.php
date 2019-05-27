@@ -20,19 +20,26 @@
 		<script type="text/javascript" src="files/core.js"></script>
 		<script type="text/javascript" src="files/script.js"></script>
 		<link rel="stylesheet" type="text/css" href="files/style.css">
+		<!-- police -->
+		<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap" rel="stylesheet">
 		<!-- favicon -->
 		<link rel="icon" type="image/png" href="files/logo.png" />
 	</head>
 	<body>
-		<div id=menu>
-			<ul>
-				<li><a href="#">Menu 1</a></li>
-				<li><a href="#">Menu 2</a></li>
-				<li><a href="#">Menu 3</a></li>
-			</ul>
+		<div id="menu">
+			<div id="txtLogo">Fayot</div>
+			<div id="logo">
+				<div>
+					<img src="files/logo.png" alt="logo" height="150" width="150">
+				</div>
+			</div>
+			<div id="txt">Voir les statistiques d'un autre jour</div>
 			<div id="datepicker"></div>
+			<div><a href="#">Voir les statistiques sur l'année</a></div>
+			<div><a href="#">Voir les statistiques sur le mois</a></div>
+			</ul>
 		</div>
-		<div id=core>
+		<div id="cadre">
 
 		</div>
   </body>

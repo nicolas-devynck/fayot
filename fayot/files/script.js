@@ -1,9 +1,5 @@
-var annee   = new Date().getFullYear();
-var mois    = ('0'+(new Date().getMonth()+1)).slice(-2);
-var jour    = ('0'+new Date().getDate()   ).slice(-2);
-var date_jour = annee+'-'+mois+'-'+jour ;
 $( document ).ready(function() {
-  //appel de la fonction core qui affiche toute la page des statistiques
+  //appel de la fonction core avec comme parametre la date du jour
   core(date_jour);
   // calandrier
   $("#datepicker").datepicker({
@@ -17,10 +13,16 @@ $( document ).ready(function() {
     dayNamesShort: [ "dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam." ],
     dayNamesMin: [ "D","L","M","M","J","V","S" ],
     weekHeader: "Sem.",
-    dateFormat: "dd/mm/yy",
+    dateFormat: "yy-mm-dd",
     firstDay: 1,
     isRTL: false,
     showMonthAfterYear: false,
-    yearSuffix: ""
+    yearSuffix: "",
+    onSelect: function (date) {
+      core(date);
+    }
+  });
+  $("#logo").click(function() {
+    core(date_jour);
   });
 });
