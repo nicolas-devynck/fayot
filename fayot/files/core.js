@@ -31,13 +31,15 @@ function core(date_jour) {
       });
       // on vide la page
       $("#titre").remove();
+      $("#sstitre").remove();
       $("#cadre").remove();
       //construction des section
+      $("#header").append("<div id='sstitre'></div>");
       $("#header").append("<div id='titre'></div>");
       $("body").append("<div id='cadre'></div>");
       //general
-      $("#titre").append("<div>Statistiques du "+datefr+"</div>");
-      $("#titre").append("<div>Depuis la création du site, "+JSON.parse(retour).total_pages_visitees_depuis_creation+" pages ont été visitées par "+JSON.parse(retour).total_visiteur_depuis_debut+" visiteurs.</div>");
+      $("#titre").append("<h1>Statistiques du "+datefr+"</h1>");
+      $("#sstitre").append("Depuis la création du site<br />"+JSON.parse(retour).total_pages_visitees_depuis_creation+" pages ont été visitées par "+JSON.parse(retour).total_visiteur_depuis_debut+" visiteurs.");
       //viste par heure
       $("#cadre").append("<div>Vues par tranche horaires</div>");
       $("#cadre").append("<div id='visite_par_heure'></div>");
@@ -55,7 +57,7 @@ function core(date_jour) {
           "float":"right"
         });
       }
-      $("#visite_par_heure").append("<p>Soit un total de "+JSON.parse(retour).total_pages_vu+" pages vues par "+JSON.parse(retour).total_visiteur+" visiteurs.</p>");
+      $("#visite_par_heure").append("<div>Soit un total de "+JSON.parse(retour).total_pages_vu+" pages vues par "+JSON.parse(retour).total_visiteur+" visiteurs.</div>");
       //pages les plus vues
       $("#cadre").append("<div>Les pages les plus vues</div>");
       $("#cadre").append("<div id='total_page'></div>");

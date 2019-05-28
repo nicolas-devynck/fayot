@@ -5,6 +5,10 @@ a:link {text-decoration:none; color:#453326;}
 a:visited {text-decoration:none; color:#453326;}
 a:active {text-decoration:none; color:#453326;}
 a:hover {text-decoration:none; color:#fff;}
+h1 {
+	font-family:"Fredericka the Great";
+	font-size:38px;
+}
 /* Menu */
 #menu {
 	margin-top:60px;
@@ -12,6 +16,7 @@ a:hover {text-decoration:none; color:#fff;}
 	height:100%;
 	width:300px;
 	background-color:#9bcc60;
+	border-right:1px solid #695444;
 	display: none;
 	z-index:1;
 }
@@ -53,6 +58,14 @@ a:hover {text-decoration:none; color:#fff;}
 	font-size:70px;
 	z-index:1;
 }
+#copyring {
+	font-size: 12px;
+	text-align: center;
+	color: #453326;
+	position:fixed;
+	bottom:0px;
+	width:300px;
+}
 /* header */
 #header {
 	border-bottom:1px solid #695444;
@@ -60,39 +73,26 @@ a:hover {text-decoration:none; color:#fff;}
 	height:60px;
 	width:100%;
 	background-color:#9bcc60;
+	z-index:1;
 }
 /* bouton */
 #bouton {
+	float:left;
 	width:60px;
 	height:60px;
 }
-/* mini logo*/
-#mini_logo {
-	width:55px;
-	height:55px;
-	margin-left:10px;
-	margin-top:10px;
-	margin-bottom:20px;
-	border-radius:50%;
-	border:3px solid #453326;
-	background-color:#fff;
-}
-#mini_logo img {
-	display:block;
-	width:60px;
-	height:60px;
-}
-#mini_logo span {
-	display:block;
-	margin-top:-7px;
-	margin-left:-7px;
-	width:53px;
-	height:53px;
-	border-radius:50%;
-	border:1px solid #749F40;
+/* rezo */
+#rezo {
+	float:left;
 }
 /* titre */
 #titre {
+	float:left;
+}
+#sstitre {
+	padding:5px;
+	height:60px;
+	border-left:1px dashed #695444;
 	float:right;
 }
 /* cadre */
@@ -100,4 +100,56 @@ a:hover {text-decoration:none; color:#fff;}
 	padding-top:70px;
 	margin-left:10px;
 	margin-right:10px;
+}
+@media screen and (min-width: 0px) and (max-width:1088px) {
+	#rezo {
+		display:none;
+	}
+}
+@media screen and (min-width: 0px) and (max-width:965px) {
+	h1 {
+		padding:5px;
+		font-size:30px;
+	}
+}
+@media screen and (min-width: 0px) and (max-width:847px) {
+	h1 {
+		padding-top:10px;
+		padding-bottom:10px;
+		font-size:25px;
+	}
+}
+@media screen and (min-width: 0px) and (max-width:764px) {
+	h1 {
+		padding-top:15px;
+		padding-bottom:15px;
+		font-size:20px;
+		font-family:serif;
+	}
+}
+@media screen and (min-width: 0px) and (max-width:719px) {
+	h1 {
+		padding-top:20px;
+		padding-bottom:20px;
+		font-size:15px;
+	}
+}
+@media screen and (min-width: 0px) and (max-width:638px) {
+	h1 {
+		display:none;
+	}
+	#sstitre {
+		float:left;
+	}
+}
+@media screen and (min-width: 0px) and (max-width:575px) {
+	h1 {
+		display:none;
+	}
+	#sstitre {
+		padding:10px;
+	}
+	#datepicker {
+		margin-left:20px;
+	}
 }
