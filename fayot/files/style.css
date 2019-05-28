@@ -9,6 +9,10 @@ h1 {
 	font-family:"Fredericka the Great";
 	font-size:38px;
 }
+ul {
+	margin: 10px;
+	 list-style-type:none;
+}
 /* Menu */
 #menu {
 	margin-top:60px;
@@ -81,6 +85,10 @@ h1 {
 	width:60px;
 	height:60px;
 }
+#mois,#annee {
+	margin-top:20px;
+	margin-left: 20px;
+}
 /* rezo */
 #rezo {
 	float:left;
@@ -101,6 +109,7 @@ h1 {
 	margin-left:10px;
 	margin-right:10px;
 }
+/* Media queries */
 @media screen and (min-width: 0px) and (max-width:1088px) {
 	#rezo {
 		display:none;
