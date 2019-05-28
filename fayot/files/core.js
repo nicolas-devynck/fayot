@@ -39,7 +39,7 @@ function core(date_jour) {
       $("#titre").append("<div>Statistiques du "+datefr+"</div>");
       $("#titre").append("<div>Depuis la création du site, "+JSON.parse(retour).total_pages_visitees_depuis_creation+" pages ont été visitées par "+JSON.parse(retour).total_visiteur_depuis_debut+" visiteurs.</div>");
       //viste par heure
-      $("#cadre").append("<div>Nombre de pages vues par tranche horaires</div>");
+      $("#cadre").append("<div>Vues par tranche horaires</div>");
       $("#cadre").append("<div id='visite_par_heure'></div>");
       for (var i = 0; i < JSON.parse(retour).visite_par_heure.length; i++) {
         if (JSON.parse(retour).visite_par_heure[i] == 0) {continue} //suprestion des heure vide

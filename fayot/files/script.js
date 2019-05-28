@@ -22,4 +22,14 @@ $( document ).ready(function() {
       core(date);
     }
   });
+
+
+  $("#bouton").click(function() {
+    if($("#menu").css("display")!="none") {
+      $("#menu").hide("slide");
+    }
+    else {
+      $("#menu").show("slide");
+    }
+  });
 });
