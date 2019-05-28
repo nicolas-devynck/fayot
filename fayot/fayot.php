@@ -1,6 +1,7 @@
 <?php
 // Variabe pour la basse de donner
 include 'files/var.php';
+require 'files/UserAgentParser.php';
 // recuperation de l'heure courante
 $date_courante = date("Y-m-d H:i:s");
 // recuperation de l'adresse IP du client (on cherche d'abord a savoir si il est derriere un proxy)
@@ -16,7 +17,8 @@ else {
 // recuperation du domaine du client
 $host = gethostbyaddr($ip);
 // recuperation du navigateur et de l'OS du client
-$navigateur = $_SERVER['HTTP_USER_AGENT'];
+$navigateur = json_encode(parse_user_agent());
+//$navigateur = $_SERVER['HTTP_USER_AGENT'];
 // recuperation du REFERER
 if (isset($_SERVER['HTTP_REFERER'])) {
   if (preg_match("/".$_SERVER['HTTP_HOST']."/i", $_SERVER['HTTP_REFERER'])) {
