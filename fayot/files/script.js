@@ -22,8 +22,7 @@ $( document ).ready(function() {
       core(date);
     }
   });
-
-
+  // show hide menu
   $("#bouton").click(function() {
     if($("#menu").css("display")!="none") {
       $("#menu").hide("slide");
@@ -31,5 +30,12 @@ $( document ).ready(function() {
     else {
       $("#menu").show("slide");
     }
+  });
+  jQuery(function($) {
+  	$(document.body).click(function(e) {
+  		if(!$(e.target).is($('#bouton'))&&!$.contains($('#bouton')[0],e.target) && !$(e.target).is($('#menu'))&&!$.contains($('#menu')[0],e.target)) {
+  			$("#menu").hide("slide");
+  		}
+  	});
   });
 });
