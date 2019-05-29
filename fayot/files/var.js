@@ -1,7 +1,5 @@
 // l'url ajax
 var adresse = "http://localhost/fayot/";
-// date du jour
-var date_jour = new Date().getFullYear()+'-'+('0'+(new Date().getMonth()+1)).slice(-2)+'-'+('0'+new Date().getDate()   ).slice(-2)
 // css de basse
 var barCSS = {
   "font-weight":"bold",

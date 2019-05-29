@@ -7,6 +7,7 @@ $date_jour = $_GET["date_jour"];
 try {$pdo = new PDO("mysql:host=".$bdHost.";dbname=".$bdName, $bdLogin, $bdPsw);}
 catch (Exception $e) {die('Erreur : '.$e->getMessage());}
 // variable statistique
+$date_cration = 0;
 $total_pages_visitees_depuis_creation = 0;
 $total_visiteur_depuis_debut = 0;
 $visite_par_heure = array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);

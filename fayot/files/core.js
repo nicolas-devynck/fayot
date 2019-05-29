@@ -23,15 +23,6 @@ function core(date_jour) {
           }
         }
       }
-      // formatage de la date
-      var datefr = $.datepicker.formatDate( "DD d MM yy", new Date(date_jour), {
-        monthNames: [ "janvier", "février", "mars", "avril", "mai", "juin","juillet", "août", "septembre", "octobre", "novembre", "décembre" ],
-        monthNamesShort: [ "janv.", "févr.", "mars", "avr.", "mai", "juin","juil.", "août", "sept.", "oct.", "nov.", "déc." ],
-        dayNames: [ "dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi" ],
-        dayNamesShort: [ "dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam." ],
-        dayNamesMin: [ "D","L","M","M","J","V","S" ],
-        weekHeader: "Sem."
-      });
       // on vide la page
       $("#titre").remove();
       $("#sstitre").remove();
@@ -41,8 +32,8 @@ function core(date_jour) {
       $("#header").append("<div id='titre'></div>");
       $("body").append("<div id='cadre'></div>");
       //general
-      $("#titre").append("<h1>Statistiques du "+datefr+"</h1>");
-      $("#sstitre").append("Depuis la création du site<br />"+JSON.parse(retour).total_pages_visitees_depuis_creation+" pages ont été visitées par "+JSON.parse(retour).total_visiteur_depuis_debut+" visiteurs.");
+      $("#titre").append("<h1>Statistiques : "+date_jour+"</h1>");
+      $("#sstitre").append("Depuis "+date_creation+"<br />"+JSON.parse(retour).total_pages_visitees_depuis_creation+" pages ont été visitées par "+JSON.parse(retour).total_visiteur_depuis_debut+" visiteurs.");
       //viste par heure
       $("#cadre").append("<div>Vues par tranche horaires</div>");
       $("#cadre").append("<div id='visite_par_heure'></div>");
