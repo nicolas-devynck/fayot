@@ -1,13 +1,15 @@
 $( document ).ready(function() {
   //appel de la fonction core avec comme parametre la date du jour
   core(date_annee);
-  for (var i = date_annee; i >= parseInt(sessionStorage.getItem("date_creation")); i--) {
-    if (i == parseInt(sessionStorage.getItem("date_creation"))) {
-      $("#number").append("<option value="+i+" selected>"+i+"</option>");
+  var i = date_creation;
+  var j = date_annee;
+  for (j; j >= i; j--) {
+    $("#menuAn").append(" <option value="+j+">"+j+"</option>");
     }
-    else {
-      $("#number").append("<option value="+i+">"+i+"</option>");
+  $("#menuAn").selectmenu({
+    icons:{button: "ui-icon-circle-triangle-s"},
+    select: function( event, ui ) {
+      core(ui.item.value);
     }
-  }
-  $("#number").selectmenu();
+  }).addClass( "overflow" );
 });

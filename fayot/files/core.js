@@ -1,6 +1,7 @@
 function core(date_jour) {
   //ajax pour les statistique du jour
   $.ajax({
+    async : false,
     url : adresse+"fayot/files/ajax.php?date_jour="+date_jour, // url
     type : "GET",
     success : function(retour) {// traitement des retour
@@ -160,8 +161,6 @@ function core(date_jour) {
       $("#cadre").accordion();
     },
     error : function(retour) {
-      // message d'erreur et affichage du retoure ajax dans la console
-      $("body").append("<p>une erreur est survenue, veuillez contacter l'administrateur</p>");
       console.log(retour);
     }
   });
