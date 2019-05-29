@@ -65,10 +65,10 @@ while ($retour = $SqlRequete->fetch(PDO::FETCH_ASSOC)) { //argument de fetch qui
   $total_referer[$retour['referer']] = $retour['nb_referer'];
 }
 // on recherche les navigateurs utilisés par les visiteurs (on calcule au passage le nombre de page qui ont été chargés avec ces systèmes)
-$SqlRequete = $pdo->prepare("SELECT distinct(navigateur), count(navigateur) as nb_navigateur FROM ".$bdTable." WHERE date_viste LIKE '".$date_jour."%' GROUP BY navigateur ORDER BY nb_navigateur DESC");
+$SqlRequete = $pdo->prepare("SELECT navigateur FROM ".$bdTable." WHERE date_viste LIKE '".$date_jour."%'");
 $SqlRequete->execute();
 while ($retour = $SqlRequete->fetch(PDO::FETCH_ASSOC)) { //argument de fetch qui suprime tout les index numerique
-  $total_navigateur[$retour['navigateur']] = $retour['nb_navigateur'];
+  array_push($total_navigateur,$retour['navigateur']);
 }
 // retoure ajax
 $arrayJson = array();

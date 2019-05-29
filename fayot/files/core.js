@@ -4,19 +4,19 @@ function core(date_jour) {
     url : adresse+"fayot/files/ajax.php?date_jour="+date_jour, // url
     type : "GET",
     success : function(retour) {// traitement des retour
-      // operation manquante dans php pour les signature des navigateurs
+      // parse les signature des navigateurs
       // tableau : utile pour les regex des match et qui compte les nombre des navigateur et os
-      var os = {Windows:0,Linux:0,Macintosh:0,Android:0};
-      var nav = {Chrome:0,Firefox:0,Safari:0,Opera:0,Edge:0};
-      for (var navigateur in JSON.parse(retour).total_navigateur) {
+      var os = {"Windows":0,"Linux":0,"Macintosh":0,"Chrome OS":0,"Android":0,"iPhone":0,"iPad":0,"iPod Touch":0,"Windows Phone OS":0,"Kindle":0,"Kindle Fire":0,"BlackBerry":0,"Playbook":0,"Tizen":0,"Oculus":0,"Nintendo 3DS":0,"New Nintendo 3DS":0,"Nintendo Wii":0,"Nintendo WiiU":0,"PlayStation 3":0,"PlayStation 4":0,"PlayStation Vita":0,"Xbox 360":0,"Xbox One":0};
+      var nav = {"Android Browser":0,"BlackBerry Browser":0,"Camino":0,"Kindle":0,"Silk":0,"Firefox":0,"IceWeasel":0,"IceCat":0,"Safari":0,"Internet Explorer":0,"IEMobile":0,"Chrome":0,"HeadlessChrome":0,"Yandex Browser":0,"Opera":0,"Midori":0,"Vivaldi":0,"TizenBrowser":0,"OculusBrowser":0,"SamsungBrowser":0,"UC Browser":0,"Lynx":0,"Wget":0,"Curl":0,"Puffin":0};
+      for (var jskey in JSON.parse(retour).total_navigateur) {
         for (var key in os) {
-          if (navigateur.match(key)) {
-            os[key] = os[key]+parseInt(JSON.parse(retour).total_navigateur[navigateur]);
+          if (JSON.parse(JSON.parse(retour).total_navigateur[jskey]).platform.match(key)) {
+            os[key] = os[key]+1;
           }
         }
         for (var key in nav) {
-          if (navigateur.match(key)) {
-            nav[key] = nav[key]+parseInt(JSON.parse(retour).total_navigateur[navigateur]);
+          if (JSON.parse(JSON.parse(retour).total_navigateur[jskey]).browser.match(key)) {
+            nav[key] = nav[key]+1;
           }
         }
       }
