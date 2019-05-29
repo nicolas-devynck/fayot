@@ -5,6 +5,7 @@ var date_jour = new Date().getFullYear()+'-'+('0'+(new Date().getMonth()+1)).sli
 // css de basse
 var barCSS = {
   "font-weight":"bold",
+  "height":"20px",
   "color":"#fff",
   "background":"linear-gradient(to right, #9bcc60, #453326)",
   "border-bottom-right-radius":"5px",
@@ -14,4 +15,13 @@ var barCSS = {
   "border-bottom": "1px solid #695444",
   "padding-left":"5px",
   "padding-right":"5px"
+};
+var TbarCSS = {
+  "font-size":"15px",
+  "font-weight":"bold",
+  "width":"100%"
+};
+var SpanBarCSS = {
+    "float":"right",
+    "font-size":"15px"
 };
