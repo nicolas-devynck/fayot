@@ -114,74 +114,6 @@ h1 {
 	margin-left:10px;
 	margin-right:10px;
 }
-/* Media queries */
-@media screen and (min-width: 0px) and (max-width:1135px) {
-	#rezo {
-		display:none;
-	}
-}
-@media screen and (min-width: 0px) and (max-width:1011px) {
-	h1 {
-		padding:5px;
-		font-size:30px;
-	}
-}
-@media screen and (min-width: 0px) and (max-width:887px) {
-	h1 {
-		padding-top:10px;
-		padding-bottom:10px;
-		font-size:25px;
-	}
-}
-@media screen and (min-width: 0px) and (max-width:799px) {
-	h1 {
-		padding-top:15px;
-		padding-bottom:15px;
-		font-size:20px;
-		font-family:serif;
-	}
-}
-@media screen and (min-width: 0px) and (max-width:752px) {
-	h1 {
-		padding-top:20px;
-		padding-bottom:20px;
-		font-size:15px;
-	}
-}
-@media screen and (min-width: 0px) and (max-width:662px) {
-	h1 {
-		display:none;
-	}
-	#sstitre {
-		float:left;
-	}
-}
-@media screen and (min-width: 0px) and (max-width:575px) {
-	h1 {
-		display:none;
-	}
-	#sstitre {
-		padding:10px;
-	}
-	#datepicker {
-		margin-left:20px;
-	}
-	#mois,#annee {
-		margin-left:30px;
-	}
-}
-@media screen and (min-width: 0px) and (max-width:335px) {
-	#sstitre {
-		font-size:13px;
-		padding:0px;
-		padding-top: 10px;
-	}
-}
-@media screen and (min-width: 0px) and (max-width:299px) {
-	#sstitre {
-		display:none;
-	}
-}
 /* autre page */
 #back {
 	margin-top:20px;
@@ -195,4 +127,79 @@ h1 {
 }
 #menuMois-button {
 	margin-left:25.7px;
+}
+/* Media queries */
+@media screen and (min-width: 0px) and (max-width:909px) {
+	#rezo {
+		display:none;
+	}
+}
+@media screen and (min-width: 0px) and (max-width:784px) {
+	h1 {
+		padding:5px;
+		font-size:30px;
+	}
+}
+@media screen and (min-width: 0px) and (max-width:704px) {
+	h1 {
+		padding-top:10px;
+		padding-bottom:10px;
+		font-size:25px;
+	}
+}
+@media screen and (min-width: 0px) and (max-width:647px) {
+	h1 {
+		padding-top:15px;
+		padding-bottom:15px;
+		font-size:20px;
+		font-family:serif;
+	}
+}
+@media screen and (min-width: 0px) and (max-width:625px) {
+	h1 {
+		padding-top:20px;
+		padding-bottom:20px;
+		font-size:15px;
+	}
+}
+@media screen and (min-width: 0px) and (max-width:575px) {
+	#sstitre {
+		padding:10px;
+	}
+	#datepicker {
+		margin-left:20px;
+	}
+	#mois,#annee {
+		margin-left:30px;
+	}
+	#menuAn-button {
+		margin-left:39.5px;
+	}
+	#menuMois-button {
+		margin-left:39.5px;
+	}
+	#back {
+		margin-left:98.5px;
+	}
+}
+@media screen and (min-width: 0px) and (max-width:541px) {
+	h1 {
+		display:none;
+	}
+	#sstitre {
+		float:left;
+		border:none;
+	}
+}
+@media screen and (min-width: 0px) and (max-width:335px) {
+	#sstitre {
+		font-size:13px;
+		padding:0px;
+		padding-top: 10px;
+	}
+}
+@media screen and (min-width: 0px) and (max-width:299px) {
+	#sstitre {
+		display:none;
+	}
 }

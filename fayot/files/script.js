@@ -1,6 +1,7 @@
 var date_creation = 0;
 var date_jour = new Date().getFullYear()+'-'+('0'+(new Date().getMonth()+1)).slice(-2)+'-'+('0'+new Date().getDate()   ).slice(-2)
 var date_annee = new Date().getFullYear();
+var date_mois = date_annee+"-"+('0'+(new Date().getMonth()+1)).slice(-2);
 $.ajax({
   async : false,
   url : adresse+"fayot/files/date.php", // url
@@ -20,12 +21,5 @@ $( document ).ready(function() {
     else {
       $("#menu").show("slide");
     }
-  });
-  jQuery(function($) {
-    $(document.body).click(function(e) {
-      if(!$(e.target).is($('#bouton'))&&!$.contains($('#bouton')[0],e.target) && !$(e.target).is($('#menu'))&&!$.contains($('#menu')[0],e.target)) {
-        $("#menu").hide("slide");
-      }
-    });
   });
 });
