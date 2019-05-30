@@ -13,13 +13,24 @@ $.ajax({
     console.log(retour);
   }
 });
-$( document ).ready(function() {
+$(document).ready(function() {
   $("#bouton").click(function() {
     if($("#menu").css("display")!="none") {
       $("#menu").hide("slide");
+      $("#deco").hide("slide");
+      $("#copyring").hide("slide");
     }
     else {
       $("#menu").show("slide");
+      $("#deco").show("slide");
+      $("#copyring").show("slide");
     }
+  });
+  jQuery(function($) {
+    $(document.body).click(function(e) {
+      if(!$(e.target).is($('#bouton'))&&!$.contains($('#bouton')[0],e.target) && !$(e.target).is($('#menu'))&&!$.contains($('#menu')[0],e.target)) {
+        $("#menu").hide("slide");
+      }
+    });
   });
 });

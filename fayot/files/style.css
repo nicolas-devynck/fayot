@@ -74,6 +74,7 @@ h1 {
 	position:fixed;
 	bottom:0px;
 	width:300px;
+	display:none;
 }
 /* header */
 #header {
@@ -82,13 +83,13 @@ h1 {
 	height:60px;
 	width:100%;
 	background-color:#9bcc60;
-	z-index:1;
+	z-index:2;
 }
 /* bouton */
 #bouton {
 	float:left;
-	width:60px;
-	height:60px;
+	width:59px;
+	height:59px;
 }
 #mois,#annee {
 	margin-top:20px;
@@ -116,17 +117,38 @@ h1 {
 }
 /* autre page */
 #back {
-	margin-top:20px;
-	margin-left:94px;
+	display:block;
+	margin: auto;
+	margin-top:15px;
 }
-#menuAn {
-	margin-left: 26px;
+#menuMois, #menuAn {
+	display:block;
+	border: 1px solid #695444;
+	background: #1c160d url("images/ui-bg_gloss-wave_20_1c160d_500x100.png") 50% 50% repeat-x;
+	font-weight: bold;
+	color: #9bcc60;
+	margin: auto;
+	margin-top: 20px;
 }
-#menuAn-button {
-	margin-left:25.7px;
+#menuMois:hover, #menuAn:hover {
+	border: 1px solid #9c947c;
+	background: #44372c url("images/ui-bg_gloss-wave_30_44372c_500x100.png") 50% 50% repeat-x;
+	color: #baec7e;
 }
-#menuMois-button {
-	margin-left:25.7px;
+#ok {
+	height: 38px;
+	margin-left: 10px;
+	margin-top: 20px;
+}
+#deco {
+	display:block;
+	position:fixed;
+	bottom:15px;
+	left:14.5px;
+	width: 270px;
+	height: 270px;
+	z-index: -1;
+	display:none;
 }
 /* Media queries */
 @media screen and (min-width: 0px) and (max-width:909px) {
@@ -172,14 +194,8 @@ h1 {
 	#mois,#annee {
 		margin-left:30px;
 	}
-	#menuAn-button {
-		margin-left:39.5px;
-	}
-	#menuMois-button {
-		margin-left:39.5px;
-	}
-	#back {
-		margin-left:98.5px;
+	#ok {
+		height:35px;
 	}
 }
 @media screen and (min-width: 0px) and (max-width:541px) {

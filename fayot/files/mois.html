@@ -21,6 +21,21 @@
 		<script type="text/javascript" src="core.js"></script>
 		<script type="text/javascript" src="mois.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<style>
+		#menuMois, #menuAn {
+			float: left;
+			margin-left:5px;
+			margin-right:5px;
+		}
+		#menuMois {
+			margin-left: 9px;
+		}
+		@media screen and (min-width: 0px) and (max-width:575px) {
+			#menuMois {
+				margin-left: 20.5px;
+			}
+		}
+		</style>
 		<!-- police -->
 		<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap" rel="stylesheet">
 		<!-- favicon -->
@@ -40,22 +55,29 @@
 				<div>Fayot</div>
 			</div>
 			<p>Voir les statistiques d'un autre mois</p>
-			<select name="menuMois" id="menuMois">
-				<option value="01">Janvier</option>
-				<option value="02">Février</option>
-				<option value="03">Mars</option>
-				<option value="04">Avril</option>
-				<option value="05">Mai</option>
-				<option value="06">Juin</option>
-				<option value="07">Juillet</option>
-				<option value="08">Août</option>
-				<option value="09">Septembre</option>
-				<option value="10">Octobre</option>
-				<option value="11">Novembre</option>
-				<option value="12">Décembre</option>
-			</select>
+			<div>
+				<select name="menuMois" id="menuMois">
+					<option value="01">Janvier</option>
+					<option value="02">Février</option>
+					<option value="03">Mars</option>
+					<option value="04">Avril</option>
+					<option value="05">Mai</option>
+					<option value="06">Juin</option>
+					<option value="07">Juillet</option>
+					<option value="08">Août</option>
+					<option value="09">Septembre</option>
+					<option value="10">Octobre</option>
+					<option value="11">Novembre</option>
+					<option value="12">Décembre</option>
+				</select>
+				<select name="menuAn" id="menuAn">
+				</select>
+				<button id="ok" class="ui-button">Ok</button>
+			</div>
 			<a href="../"><button id="back" class="ui-button"><-- Retour</button></a>
 			<div id="copyring">© 2019 Nicolas Devynck</div>
+			<img id="deco" src="deco.png" alt="deco">
 		</div>
+</script>
   </body>
 </html>
