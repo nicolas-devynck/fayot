@@ -1,42 +1,61 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
 	<head>
-		<title>Fayot - statistiques</title>
-		<!-- Encodage UTF8 -->
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="Content-Type" content="UTF-8">
-		<!-- Meta pour les ecran mobile HD -->
-		<meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />
+		<title>Fayot - Statistiques</title>
+		<meta charset="utf-8">
+		<!-- Meta Pour les ecran mobile -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+		<!-- police -->
+		<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap" rel="stylesheet">
 		<!-- knacss -->
 		<link rel="stylesheet" href="knacss.css">
 		<!-- Jquery -->
-    <script type="text/javascript" src="jquery.js"></script>
-		<script type="text/javascript" src="jquery-ui.js"></script>
+		<script src="jquery.js"></script>
+		<script src="jquery-ui.js"></script>
 		<link rel="stylesheet" href="jquery-ui.css">
 		<link rel="stylesheet" href="jquery-ui.structure.css">
 		<link rel="stylesheet" href="jquery-ui.theme.css">
 		<!-- programme -->
-		<script type="text/javascript" src="var.js"></script>
-		<script type="text/javascript" src="script.js"></script>
-		<script type="text/javascript" src="core.js"></script>
-		<script type="text/javascript" src="annee.js"></script>
+		<script src="var.js"></script>
+		<script src="script.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<!-- police -->
-		<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+		<style>
+			#back {
+				display:block;
+				margin: auto;
+				margin-top:15px;
+			}
+			#menuAn {
+				display:block;
+				border: 1px solid #695444;
+				background: #1c160d url("ui-bg_gloss-wave_20_1c160d_500x100.png") 50% 50% repeat-x;
+				font-weight: bold;
+				color: #9bcc60;
+				margin: auto;
+				margin-top: 20px;
+			}
+			#menuAn:hover {
+				border: 1px solid #9c947c;
+				background: #44372c url("ui-bg_gloss-wave_30_44372c_500x100.png") 50% 50% repeat-x;
+				color: #baec7e;
+			}
+		</style>
 		<!-- favicon -->
-		<link rel="icon" type="image/png" href="logo.png" />
+		<link rel="icon" type="image/png" href="logo.png">
 	</head>
 	<body>
+		<!-- header -->
 		<div id="header">
-			<button id="bouton" class="ui-button"><img src="menu.png" alt="menu" /></button>
+			<button id="bouton" class="ui-button"><img src="menu.png" alt="menu"></button>
 			<div id="rezo">
-				<a href="https://www.facebook.com/devynck.nicolas" target="_blank"><img src="fb.png" height="60" width="60" alt="Facebook" /></a>
-				<a href="https://github.com/nicolas-devynck/fayot" target="_blank"><img src="github.png" height="60" width="60" alt="Github" /></a>
+				<a href="https://www.facebook.com/devynck.nicolas" target="_blank"><img src="fb.png" height="60" width="60" alt="Facebook"></a>
+				<a href="https://github.com/nicolas-devynck/fayot" target="_blank"><img src="github.png" height="60" width="60" alt="Github"></a>
 			</div>
 		</div>
+		<!-- menu -->
 		<div id="menu">
 			<div id="logo">
-				<a href="index.html"><span><img src="logo.png" alt="logo"></span></a>
+				<a href="../"><span><img src="logo.png" alt="logo"></span></a>
 				<div>Fayot</div>
 			</div>
 			<p>Voir les statistiques d'une autre année</p>
@@ -44,9 +63,26 @@
 				<select name="menuAn" id="menuAn">
 				</select>
 			</div>
-			<a href="../"><button id="back" class="ui-button"><-- Retour</button></a>
+			<button id="back" class="ui-button">&lt;-- Retour</button>
 			<img id="deco" src="deco.png" alt="deco">
 			<div id="copyring">© 2019 Nicolas Devynck</div>
 		</div>
-  </body>
+		<script>
+			// appel de la fonction principal
+			core(date_annee);
+			var i = date_creation;
+			var j = date_annee;
+			// génération des option select selont la date la plus vielle de la bdd
+			for (j; j >= i; j--) {
+				$("#menuAn").append(" <option value="+j+">"+j+"</option>");
+			}
+			// action sur les boutons
+			$("#menuAn").change(function() {
+				core($(this).val());
+			});
+			$("#back").click(function(event) {
+					document.location.href="../";
+				});
+		</script>
+	</body>
 </html>

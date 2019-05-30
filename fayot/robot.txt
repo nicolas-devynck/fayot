@@ -1,2 +1,4 @@
+# Règle pour tous les robots
+# désactive le référencement
 User-agent: *
 Disallow: /

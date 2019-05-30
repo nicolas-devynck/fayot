@@ -1,3 +1,4 @@
+/* /!\ attention /!\ si vous changer `fayot` ne pas oublier de le changer aussi dans var.php */
 CREATE DATABASE `fayot` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 CREATE TABLE `fayot` (
   `id` int(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,

@@ -18,7 +18,6 @@ else {
 $host = gethostbyaddr($ip);
 // recuperation du navigateur et de l'OS du client
 $navigateur = json_encode(parse_user_agent());
-//$navigateur = $_SERVER['HTTP_USER_AGENT'];
 // recuperation du REFERER
 if (isset($_SERVER['HTTP_REFERER'])) {
   if (preg_match("/".$_SERVER['HTTP_HOST']."/i", $_SERVER['HTTP_REFERER'])) {

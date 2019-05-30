@@ -1,5 +1,4 @@
 <?php
-// Variabe pour la basse de donner
 include 'var.php';
 // connexion a la Basse de donner
 try {$pdo = new PDO("mysql:host=".$bdHost.";dbname=".$bdName, $bdLogin, $bdPsw);}

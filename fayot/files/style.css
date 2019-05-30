@@ -13,7 +13,6 @@ body {
 a:link {text-decoration:none; color:#453326;}
 a:visited {text-decoration:none; color:#453326;}
 a:active {text-decoration:none; color:#453326;}
-a:hover {text-decoration:none; color:#fff;}
 h1 {
 	font-family:"Fredericka the Great";
 	font-size:38px;
@@ -91,9 +90,15 @@ h1 {
 	width:59px;
 	height:59px;
 }
-#mois,#annee {
-	margin-top:20px;
-	margin-left:20px;
+#deco {
+	display:block;
+	position:fixed;
+	bottom:15px;
+	left:14.5px;
+	width: 270px;
+	height: 270px;
+	z-index: -1;
+	display:none;
 }
 /* rezo */
 #rezo {
@@ -114,41 +119,6 @@ h1 {
 	padding-top:70px;
 	margin-left:10px;
 	margin-right:10px;
-}
-/* autre page */
-#back {
-	display:block;
-	margin: auto;
-	margin-top:15px;
-}
-#menuMois, #menuAn {
-	display:block;
-	border: 1px solid #695444;
-	background: #1c160d url("images/ui-bg_gloss-wave_20_1c160d_500x100.png") 50% 50% repeat-x;
-	font-weight: bold;
-	color: #9bcc60;
-	margin: auto;
-	margin-top: 20px;
-}
-#menuMois:hover, #menuAn:hover {
-	border: 1px solid #9c947c;
-	background: #44372c url("images/ui-bg_gloss-wave_30_44372c_500x100.png") 50% 50% repeat-x;
-	color: #baec7e;
-}
-#ok {
-	height: 38px;
-	margin-left: 10px;
-	margin-top: 20px;
-}
-#deco {
-	display:block;
-	position:fixed;
-	bottom:15px;
-	left:14.5px;
-	width: 270px;
-	height: 270px;
-	z-index: -1;
-	display:none;
 }
 /* Media queries */
 @media screen and (min-width: 0px) and (max-width:909px) {
@@ -187,15 +157,6 @@ h1 {
 @media screen and (min-width: 0px) and (max-width:575px) {
 	#sstitre {
 		padding:10px;
-	}
-	#datepicker {
-		margin-left:20px;
-	}
-	#mois,#annee {
-		margin-left:30px;
-	}
-	#ok {
-		height:35px;
 	}
 }
 @media screen and (min-width: 0px) and (max-width:541px) {

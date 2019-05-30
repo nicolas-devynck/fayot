@@ -1,8 +1,7 @@
 <?php
-// Variabe pour la basse de donner
 include 'var.php';
 // date ajax
-$date_jour = $_GET["date_jour"];
+$date_fonction = $_GET["date_fonction"];
 // connexion a la Basse de donner
 try {$pdo = new PDO("mysql:host=".$bdHost.";dbname=".$bdName, $bdLogin, $bdPsw);}
 catch (Exception $e) {die('Erreur : '.$e->getMessage());}
@@ -30,7 +29,7 @@ while ($retour = $SqlRequete->fetch(PDO::FETCH_ASSOC)) { //argument de fetch qui
   $total_visiteur_depuis_debut = $total_visiteur_depuis_debut+1;
 }
 // on recherche les visite par heures
-$SqlRequete = $pdo->prepare("SELECT date_viste FROM ".$bdTable." WHERE date_viste LIKE '".$date_jour."%' ORDER BY date_viste ASC");
+$SqlRequete = $pdo->prepare("SELECT date_viste FROM ".$bdTable." WHERE date_viste LIKE '".$date_fonction."%' ORDER BY date_viste ASC");
 $SqlRequete->execute();
 while ($retour = $SqlRequete->fetch(PDO::FETCH_ASSOC)) { //argument de fetch qui suprime tout les index numerique
   $date=$retour['date_viste'];
@@ -42,31 +41,31 @@ while ($retour = $SqlRequete->fetch(PDO::FETCH_ASSOC)) { //argument de fetch qui
   $total_pages_vu = $total_pages_vu+1;
 }
 // on calcule le nombre de visiteurs de la journée
-$SqlRequete = $pdo->prepare("SELECT DISTINCT(ip) FROM ".$bdTable." WHERE date_viste LIKE '".$date_jour."%' ORDER BY date_viste ASC");
+$SqlRequete = $pdo->prepare("SELECT DISTINCT(ip) FROM ".$bdTable." WHERE date_viste LIKE '".$date_fonction."%' ORDER BY date_viste ASC");
 $SqlRequete->execute();
 while ($retour = $SqlRequete->fetch(PDO::FETCH_ASSOC)) { //argument de fetch qui suprime tout les index numerique
   $total_visiteur = $total_visiteur+1;
 }
 // on recherche les pages qui ont été les plus vues sur la journée (on calcule au passage le nombre de fois qu'elles ont été vu)
-$SqlRequete = $pdo->prepare("SELECT distinct(page), count(page) as nb_page FROM ".$bdTable." WHERE date_viste LIKE '".$date_jour."%' GROUP BY page ORDER BY nb_page DESC");
+$SqlRequete = $pdo->prepare("SELECT distinct(page), count(page) as nb_page FROM ".$bdTable." WHERE date_viste LIKE '".$date_fonction."%' GROUP BY page ORDER BY nb_page DESC");
 $SqlRequete->execute();
 while ($retour = $SqlRequete->fetch(PDO::FETCH_ASSOC)) { //argument de fetch qui suprime tout les index numerique
   $total_page[$retour['page']] = $retour['nb_page'];
 }
 // on recherche les visiteurs qui ont été les plus connectes au site sur la journée (on calcule au passage le nombre de page qu'ils ont chargé)
-$SqlRequete = $pdo->prepare("SELECT distinct(host), count(host) as nb_host FROM ".$bdTable." WHERE date_viste LIKE '".$date_jour."%' GROUP BY host ORDER BY nb_host DESC");
+$SqlRequete = $pdo->prepare("SELECT distinct(host), count(host) as nb_host FROM ".$bdTable." WHERE date_viste LIKE '".$date_fonction."%' GROUP BY host ORDER BY nb_host DESC");
 $SqlRequete->execute();
 while ($retour = $SqlRequete->fetch(PDO::FETCH_ASSOC)) { //argument de fetch qui suprime tout les index numerique
   $total_host[$retour['host']] = $retour['nb_host'];
 }
 // on recherche les meilleurs referer sur la journée
-$SqlRequete = $pdo->prepare("SELECT distinct(referer), count(referer) as nb_referer FROM ".$bdTable." WHERE date_viste LIKE '".$date_jour."%' AND referer!='' GROUP BY referer ORDER BY nb_referer DESC");
+$SqlRequete = $pdo->prepare("SELECT distinct(referer), count(referer) as nb_referer FROM ".$bdTable." WHERE date_viste LIKE '".$date_fonction."%' AND referer!='' GROUP BY referer ORDER BY nb_referer DESC");
 $SqlRequete->execute();
 while ($retour = $SqlRequete->fetch(PDO::FETCH_ASSOC)) { //argument de fetch qui suprime tout les index numerique
   $total_referer[$retour['referer']] = $retour['nb_referer'];
 }
 // on recherche les navigateurs utilisés par les visiteurs (on calcule au passage le nombre de page qui ont été chargés avec ces systèmes)
-$SqlRequete = $pdo->prepare("SELECT navigateur FROM ".$bdTable." WHERE date_viste LIKE '".$date_jour."%'");
+$SqlRequete = $pdo->prepare("SELECT navigateur FROM ".$bdTable." WHERE date_viste LIKE '".$date_fonction."%'");
 $SqlRequete->execute();
 while ($retour = $SqlRequete->fetch(PDO::FETCH_ASSOC)) { //argument de fetch qui suprime tout les index numerique
   array_push($total_navigateur,$retour['navigateur']);

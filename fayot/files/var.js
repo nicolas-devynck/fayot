@@ -1,6 +1,7 @@
 // l'url ajax
 var adresse = "http://localhost/fayot/";
 // css de basse
+//barre de progression
 var barCSS = {
   "font-weight":"bold",
   "height":"20px",
@@ -14,12 +15,14 @@ var barCSS = {
   "padding-left":"5px",
   "padding-right":"5px"
 };
+// Titre de la barre de progression
 var TbarCSS = {
   "font-size":"15px",
   "font-weight":"bold",
   "width":"100%"
 };
+// chiffre
 var SpanBarCSS = {
-    "float":"right",
-    "font-size":"15px"
+  "float":"right",
+  "font-size":"15px"
 };
