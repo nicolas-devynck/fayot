@@ -46,7 +46,7 @@ catch (Exception $e) {
 }
 // insertion des elements dans la base de donnees
 $SqlRequete = $pdo->prepare("INSERT INTO ".$bdTable." VALUES (
-  '',
+  :bdId,
   :bdDate,
   :bdPage,
   :bdIp,
@@ -55,6 +55,7 @@ $SqlRequete = $pdo->prepare("INSERT INTO ".$bdTable." VALUES (
   :bdReferer
 )");
 $SqlRequete->execute(array(
+  'bdId' => NULL,
   'bdDate' => $date_courante,
   'bdPage' => $page_courante,
   'bdIp' => $ip,

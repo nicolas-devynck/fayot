@@ -1,5 +1,5 @@
 // l'url ajax
-var adresse = "http://localhost/fayot/";
+var adresse = window.location.href.substr(0, window.location.pathname.length+4)+"fayot/";
 // css de basse
 //barre de progression
 var barCSS = {
