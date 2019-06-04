@@ -1,4 +1,4 @@
-<!-- page test -->
+<!-- page test 2 -->
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 	<head>
