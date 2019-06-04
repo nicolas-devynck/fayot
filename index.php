@@ -1,4 +1,4 @@
-<!-- page random -->
+<!-- page test -->
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 	<head>
