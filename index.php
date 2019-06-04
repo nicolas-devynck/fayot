@@ -1,3 +1,4 @@
+<!-- page random -->
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 	<head>
