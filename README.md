@@ -11,3 +11,5 @@ le fichier "\files\var.js" contient les variables pour les paramètres de JavaSc
 ## note
 j'utilise [PHP User Agent Parser](https://github.com/donatj/PhpUserAgent)
 pour traiter les User Agent et faire les statistiques des navigateurs
+
+##
