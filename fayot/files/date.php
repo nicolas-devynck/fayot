@@ -10,4 +10,5 @@ while ($retour = $SqlRequete->fetch(PDO::FETCH_ASSOC)) { //argument de fetch qui
   $date_creation = $retour["date_creation"];
 }
 echo $date_creation;
+//gg
 ?>
