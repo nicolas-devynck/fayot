@@ -1,4 +1,5 @@
 # fayot
+## Beta 0.1
 Petit script pour générer les statistiques des visiteurs d'un site web en php.
 
 ## installation
